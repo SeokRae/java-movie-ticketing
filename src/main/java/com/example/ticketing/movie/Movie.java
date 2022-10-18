@@ -1,5 +1,8 @@
 package com.example.ticketing.movie;
 
+import com.example.ticketing.Screening;
+import com.example.ticketing.benefit.DiscountPolicy;
+
 import java.util.Objects;
 
 /**
@@ -10,10 +13,16 @@ import java.util.Objects;
 public class Movie {
 	private final String title;
 	private final Money price;
+	private final DiscountPolicy discountPolicy;
 	
-	public Movie(String title, Money price) {
+	public Movie(String title, Money price, DiscountPolicy discountPolicy) {
 		this.title = title;
 		this.price = price;
+		this.discountPolicy = discountPolicy;
+	}
+	
+	public Money calculateMovieFee(Screening screening) {
+		return price.minus(discountPolicy.calculateDiscountAmount(screening));
 	}
 	
 	public Money getPrice() {
