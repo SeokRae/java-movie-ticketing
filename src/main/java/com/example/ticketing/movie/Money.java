@@ -21,6 +21,10 @@ public class Money {
 		return Money.wons(amount - money2.amount);
 	}
 	
+	public Money times(double percent) {
+		return new Money((int) (amount * percent));
+	}
+	
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
