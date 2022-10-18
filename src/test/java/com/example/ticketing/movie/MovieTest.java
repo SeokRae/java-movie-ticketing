@@ -1,15 +1,15 @@
 package com.example.ticketing.movie;
 
-import com.example.ticketing.Screening;
 import com.example.ticketing.benefit.DiscountPolicy;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static com.example.ticketing.movie.Money.ZERO;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("영화 관련 테스트 모음")
 class MovieTest {
-	private final DiscountPolicy discountPolicy = screening -> Money.wons(0);
+	private final DiscountPolicy discountPolicy = screening -> ZERO;
 	
 	@DisplayName("영화 생성 테스트(가격은 변동이 가능하다.)")
 	@Test

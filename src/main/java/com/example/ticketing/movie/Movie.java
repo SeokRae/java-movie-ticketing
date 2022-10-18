@@ -8,7 +8,6 @@ import java.util.Objects;
 /**
  * 영화 정보 클래스
  * 1. 타이틀, 가격 정보를 갖는다.
- *
  */
 public class Movie {
 	private final String title;

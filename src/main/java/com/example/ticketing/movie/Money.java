@@ -4,9 +4,9 @@ import java.util.Objects;
 
 /**
  * 영화 예매 시 금액을 표현하는 클래스
- *
  */
 public class Money {
+	public static final Money ZERO = Money.wons(0);
 	private final int amount;
 	
 	private Money(int amount) {

@@ -4,7 +4,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 
 import static java.util.concurrent.Executors.newFixedThreadPool;
@@ -28,7 +27,7 @@ class MoneyTest {
 	
 	/**
 	 * hashCode의 주석
-	 *
+	 * <p>
 	 * If two objects are equal according to the equals method,
 	 * then calling the hashCode method on each of the two objects must produce the same integer result.
 	 */
