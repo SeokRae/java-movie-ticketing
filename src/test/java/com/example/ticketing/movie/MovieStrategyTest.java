@@ -33,8 +33,9 @@ class MovieStrategyTest {
 		int amount = 10000;
 		// when
 		Movie movie = new Movie(title, Money.wons(amount), new AmountDiscountPolicy(Money.wons(1000)));
+		Money actual = movie.calculateMovieFee(new Screening(movie, LocalDateTime.now()));
 		// then
-		assertThat(movie.getPrice()).isEqualTo(Money.wons(amount));
+		assertThat(actual).isEqualTo(Money.wons(9000));
 	}
 	
 	@DisplayName("영화 가격 비율 할인 적용 테스트")
