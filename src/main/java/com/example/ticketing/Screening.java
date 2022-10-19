@@ -10,15 +10,18 @@ import java.time.LocalDateTime;
  */
 public class Screening {
 	private final Movie movie;
-	private final LocalDateTime whenScreened;
+	private final WhenScreened whenScreened;
 	
 	public Screening(Movie movie, LocalDateTime whenScreened) {
 		this.movie = movie;
-		this.whenScreened = whenScreened;
+		this.whenScreened = new WhenScreened(whenScreened);
 	}
 	
 	public Money fee() {
-		return movie.getPrice();
+		return movie.calculateMovieFee(this);
 	}
 	
+	public WhenScreened whenScreened() {
+		return whenScreened;
+	}
 }

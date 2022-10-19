@@ -33,6 +33,6 @@ class MovieTest {
 		// when
 		Movie movie = new Movie(title, Money.wons(amount), noneDiscountPolicy);
 		// then
-		assertThat(movie.getPrice()).isEqualTo(Money.wons(amount));
+		assertThat(movie.price()).isEqualTo(Money.wons(amount));
 	}
 }

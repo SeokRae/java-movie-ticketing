@@ -25,7 +25,7 @@ public class Movie {
 		return price.minus(discountAmount);
 	}
 	
-	public Money getPrice() {
+	public Money price() {
 		return price;
 	}
 	

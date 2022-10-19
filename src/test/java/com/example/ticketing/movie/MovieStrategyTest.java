@@ -25,7 +25,7 @@ class MovieStrategyTest {
 		// when
 		Movie movie = new Movie(title, Money.wons(amount), new NoneDiscountPolicy());
 		// then
-		assertThat(movie.getPrice()).isEqualTo(Money.wons(amount));
+		assertThat(movie.price()).isEqualTo(Money.wons(amount));
 	}
 	
 	@DisplayName("영화 가격 고정 할인 적용 테스트")
