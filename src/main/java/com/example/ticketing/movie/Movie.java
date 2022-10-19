@@ -21,7 +21,8 @@ public class Movie {
 	}
 	
 	public Money calculateMovieFee(Screening screening) {
-		return price.minus(discountPolicy.calculateDiscountAmount(screening));
+		Money discountAmount = discountPolicy.calculateDiscountAmount(screening);
+		return price.minus(discountAmount);
 	}
 	
 	public Money getPrice() {
