@@ -3,7 +3,7 @@ package com.example.ticketing.benefit;
 import com.example.ticketing.Screening;
 import com.example.ticketing.movie.Money;
 
-public class AmountDiscountPolicy implements DiscountPolicy {
+public class AmountDiscountPolicy extends AbstractDiscountPolicy {
 	private final Money discountAmount;
 	
 	public AmountDiscountPolicy(Money discountAmount) {
@@ -11,7 +11,7 @@ public class AmountDiscountPolicy implements DiscountPolicy {
 	}
 	
 	@Override
-	public Money calculateDiscountAmount(Screening screening) {
+	protected Money getDiscountAmount(Screening screening) {
 		return discountAmount;
 	}
 }

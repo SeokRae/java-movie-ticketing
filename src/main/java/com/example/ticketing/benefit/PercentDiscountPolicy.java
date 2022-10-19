@@ -3,7 +3,7 @@ package com.example.ticketing.benefit;
 import com.example.ticketing.Screening;
 import com.example.ticketing.movie.Money;
 
-public class PercentDiscountPolicy implements DiscountPolicy {
+public class PercentDiscountPolicy extends AbstractDiscountPolicy {
 	private final double percent;
 	
 	public PercentDiscountPolicy(double percent) {
@@ -11,7 +11,7 @@ public class PercentDiscountPolicy implements DiscountPolicy {
 	}
 	
 	@Override
-	public Money calculateDiscountAmount(Screening screening) {
+	protected Money getDiscountAmount(Screening screening) {
 		return screening.fee().times(percent);
 	}
 }
