@@ -10,11 +10,15 @@ import com.example.ticketing.movie.Money;
 import com.example.ticketing.movie.Movie;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -57,17 +61,19 @@ class ScreeningTest {
 		assertThat(fee).isEqualTo(Money.wons(9000));
 	}
 	
+	private static Stream<Arguments> periodConditionDummy() {
+		return Stream.of(
+				Arguments.of(LocalDate.now().getDayOfWeek(), LocalTime.of(0, 0), LocalTime.of(9, 30), LocalDateTime.of(LocalDate.now(), LocalTime.of(8, 30))),
+				Arguments.of(LocalDate.now().getDayOfWeek(), LocalTime.of(22, 0), LocalTime.of(23, 59), LocalDateTime.of(LocalDate.now(), LocalTime.of(22, 30)))
+		);
+	}
 	@DisplayName("상영 정보 생성 및 비율 할인 검증 테스트")
-	@Test
-	void testCase3() {
+	@MethodSource("periodConditionDummy")
+	@ParameterizedTest(name = "{index} => 요일={0}, 시작시간={1}, 종료시간={2}, 상영시간={3}")
+	void testCase3(DayOfWeek dayOfWeek, LocalTime startTime, LocalTime endTime, LocalDateTime whenScreened) {
 		// given
-		DayOfWeek dayOfWeek = LocalDate.now().getDayOfWeek();
-		LocalTime startTime = LocalTime.of(0, 0);
-		LocalTime endTime = LocalTime.of(9, 30);
 		DiscountCondition periodCondition = new PeriodCondition(dayOfWeek, startTime, endTime);
 		DiscountPolicy percentDiscountPolicy = new PercentDiscountPolicy(0.5, periodCondition);
-		
-		LocalDateTime whenScreened = LocalDateTime.of(LocalDate.now(), LocalTime.of(8, 30));
 		
 		Movie movie = new Movie("어벤져스", Money.wons(10000), percentDiscountPolicy);
 		// when
