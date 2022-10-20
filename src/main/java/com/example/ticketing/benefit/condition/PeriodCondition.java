@@ -1,9 +1,9 @@
 package com.example.ticketing.benefit.condition;
 
 import com.example.ticketing.Screening;
-import com.example.ticketing.WhenScreened;
 
 import java.time.DayOfWeek;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class PeriodCondition implements DiscountCondition {
@@ -19,8 +19,9 @@ public class PeriodCondition implements DiscountCondition {
 	
 	@Override
 	public boolean isSatisfiedBy(Screening screening) {
-		WhenScreened whenScreened = screening.whenScreened();
-		return whenScreened.isDayOfWeek(dayOfWeek)
-			&& whenScreened.compareToStart(startTime) && whenScreened.compareToEnd(endTime);
+		LocalDateTime localDateTime = screening.whenScreened();
+		return localDateTime.getDayOfWeek().equals(dayOfWeek)
+			&& startTime.compareTo(localDateTime.toLocalTime()) <= 0
+			&& endTime.compareTo(localDateTime.toLocalTime()) >= 0;
 	}
 }
