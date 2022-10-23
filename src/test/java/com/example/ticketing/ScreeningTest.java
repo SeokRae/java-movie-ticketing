@@ -84,4 +84,18 @@ class ScreeningTest {
 		// then
 		assertThat(fee).isEqualTo(Money.wons(5000));
 	}
+	
+	@DisplayName("상영 정보 생성 테스트")
+	@Test
+	void testCase4() {
+		// given
+		Movie movie = new Movie("어벤져스", Money.wons(10000), noneDiscountPolicy);
+		LocalDateTime whenScreened = LocalDateTime.of(2022, 10, 18, 21, 30);
+		
+		// when
+		Screening screening = new Screening(movie, whenScreened);
+		
+		// then
+		assertThat(screening).isEqualTo(new Screening(movie, whenScreened));
+	}
 }
