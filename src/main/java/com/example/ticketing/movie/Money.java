@@ -25,6 +25,10 @@ public class Money {
 		return new Money((int) (amount * percent));
 	}
 	
+	public Money plus(Money calculateDiscountAmount) {
+		return Money.wons(amount + calculateDiscountAmount.amount);
+	}
+	
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
