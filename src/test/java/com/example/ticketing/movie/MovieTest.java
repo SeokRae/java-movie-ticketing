@@ -1,6 +1,5 @@
 package com.example.ticketing.movie;
 
-import com.example.ticketing.benefit.DiscountPolicy;
 import com.example.ticketing.benefit.NoneDiscountPolicy;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

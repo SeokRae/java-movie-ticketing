@@ -4,7 +4,6 @@ import com.example.ticketing.Screening;
 import com.example.ticketing.benefit.AmountDiscountPolicy;
 import com.example.ticketing.benefit.NoneDiscountPolicy;
 import com.example.ticketing.benefit.PercentDiscountPolicy;
-import com.example.ticketing.benefit.condition.DiscountCondition;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

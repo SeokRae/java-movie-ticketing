@@ -1,4 +1,4 @@
-package com.example.ticketing.benefit;
+package com.example.ticketing.movie;
 
 import com.example.ticketing.Screening;
 import com.example.ticketing.movie.Money;

@@ -1,6 +1,7 @@
 package com.example.ticketing.benefit.condition;
 
 import com.example.ticketing.Screening;
+import com.example.ticketing.movie.DiscountCondition;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

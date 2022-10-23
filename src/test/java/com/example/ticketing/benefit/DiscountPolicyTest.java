@@ -1,7 +1,7 @@
 package com.example.ticketing.benefit;
 
 import com.example.ticketing.Screening;
-import com.example.ticketing.benefit.condition.DiscountCondition;
+import com.example.ticketing.movie.DiscountPolicy;
 import com.example.ticketing.movie.Money;
 import com.example.ticketing.movie.Movie;
 import org.junit.jupiter.api.DisplayName;

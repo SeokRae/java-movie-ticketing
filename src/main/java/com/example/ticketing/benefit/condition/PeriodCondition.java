@@ -2,6 +2,7 @@ package com.example.ticketing.benefit.condition;
 
 import com.example.ticketing.Screening;
 import com.example.ticketing.WhenScreened;
+import com.example.ticketing.movie.DiscountCondition;
 
 import java.time.DayOfWeek;
 import java.time.LocalTime;

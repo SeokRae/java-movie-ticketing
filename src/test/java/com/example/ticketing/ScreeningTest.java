@@ -1,10 +1,10 @@
 package com.example.ticketing;
 
 import com.example.ticketing.benefit.AmountDiscountPolicy;
-import com.example.ticketing.benefit.DiscountPolicy;
+import com.example.ticketing.movie.DiscountPolicy;
 import com.example.ticketing.benefit.NoneDiscountPolicy;
 import com.example.ticketing.benefit.PercentDiscountPolicy;
-import com.example.ticketing.benefit.condition.DiscountCondition;
+import com.example.ticketing.movie.DiscountCondition;
 import com.example.ticketing.benefit.condition.PeriodCondition;
 import com.example.ticketing.movie.Money;
 import com.example.ticketing.movie.Movie;

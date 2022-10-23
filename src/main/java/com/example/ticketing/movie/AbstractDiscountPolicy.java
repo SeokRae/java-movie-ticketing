@@ -1,8 +1,6 @@
-package com.example.ticketing.benefit;
+package com.example.ticketing.movie;
 
 import com.example.ticketing.Screening;
-import com.example.ticketing.benefit.condition.DiscountCondition;
-import com.example.ticketing.movie.Money;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.ticketing.benefit.condition;
+package com.example.ticketing.movie;
 
 import com.example.ticketing.Screening;
 
